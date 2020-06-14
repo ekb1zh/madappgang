@@ -1,0 +1,13 @@
+HTTrack3.49-2 launched on Sun, 14 Jun 2020 14:43:48 at https://madappgang.com/getintouch
+(httrack https://madappgang.com/getintouch -O "/home/home/Рабочий стол/madappgang" )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:56:50	Error: 	"Not Found" (404) at link https://madappgang.com/blog/flutter-1-0-released-the-revolution-in-mobile-development/<https://github.com/Solido/awesome-flutter> (from https://madappgang.com/blog/flutter-1-0-released-the-revolution-in-mobile-development/)
+14:56:50	Error: 	"Not Found" (404) at link https://madappgang.com/blog/flutter-1-0-released-the-revolution-in-mobile-development/<https://pub.dartlang.org/flutter> (from https://madappgang.com/blog/flutter-1-0-released-the-revolution-in-mobile-development/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 13 minutes 2 seconds : 739 links scanned, 736 files written (81170051 bytes overall) [73911004 bytes received at 94515 bytes/sec], 19216390 bytes transferred using HTTP compression in 191 files, ratio 34%, 39.3 requests per connection
+(2 errors, 0 warnings, 0 messages)
