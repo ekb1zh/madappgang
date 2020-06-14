@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import * as T from '../../middle/types';
 
-const URL = '';
+const SERVER_URL = 'https://script.google.com/macros/s/AKfycby-3ToVb47vnWduP7viSYmeRaE4Yg7pGEWMeSXl-70U_gin7PM/exec';
 
 function fetchPost(data: object) {
-  return fetch(URL, {
+  return fetch(SERVER_URL, {
     method: 'POST',
     body: JSON.stringify(data),
   });
 }
 
-function createDefaultInputs() {
+function createDefaultInputs(): T.Data {
   return {
     name: '',
     email: '',
