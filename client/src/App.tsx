@@ -47,8 +47,6 @@ function App() {
     setIsPopupVisible(false);
   }
 
-  console.log({ isLoading: isSending, isPopupVisible, inputs })
-
   return (
 
     <div style={{ outline: 'none' }} tabIndex={-1} role="group" id="gatsby-focus-wrapper">
