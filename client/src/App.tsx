@@ -2,31 +2,44 @@ import React, { useState } from 'react';
 
 const URL = '';
 
-function fetchPost(data: Parameters<typeof fetch>[1]) {
+function fetchPost(data: object) {
   return fetch(URL, {
     method: 'POST',
     body: JSON.stringify(data),
   });
 }
 
+function createDefaultInputs() {
+  return {
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  }
+}
+
 function App() {
   const [isSending, setIsSending] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState(createDefaultInputs());
 
   function handleChangeFormValues(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
     setInputs(prev => ({ ...prev, [name]: value }));
   }
 
-  function handleClickFormSend(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  function handleSubmitForm(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     setIsSending(true);
     fetchPost(inputs)
       .then(res => {
-        setIsPopupVisible(true);
-        setInputs({});
+        if (res.ok) {
+          setIsPopupVisible(true);
+          setInputs(createDefaultInputs());
+        }
       })
-      .finally(() => setIsSending(false))
+      .finally(() => setIsSending(false));
   }
 
   function handleClickPopupСonfirm(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -60,6 +73,7 @@ function App() {
               <div className="contacts-page--body">
                 <div className="contact--form-wrapper">
                   <form
+                    onSubmit={handleSubmitForm}
                     className="contact--form"
                     // method="post"
                     // action="/"
@@ -68,14 +82,41 @@ function App() {
                     data-netlify-honeypot="bot-field"
                   >
                     <input type="hidden" name="bot-field" />
-                    <input onChange={handleChangeFormValues} type="text" name="name" className="contact--form-input" placeholder="Name" required />
-                    <input onChange={handleChangeFormValues} type="email" name="email" className="contact--form-input" placeholder="E-mail" required />
-                    <input onChange={handleChangeFormValues} type="tel" name="phone" className="contact--form-input" placeholder="Phone number" />
-                    <textarea onChange={handleChangeFormValues} name="message" className="contact--form-input" placeholder="Message" />
+                    <input
+                      onChange={handleChangeFormValues}
+                      value={inputs.name}
+                      name="name"
+                      type="text"
+                      className="contact--form-input"
+                      placeholder="Name"
+                      required
+                    />
+                    <input
+                      onChange={handleChangeFormValues}
+                      value={inputs.email}
+                      name="email"
+                      type="email"
+                      className="contact--form-input"
+                      placeholder="E-mail"
+                      required />
+                    <input
+                      onChange={handleChangeFormValues}
+                      value={inputs.phone}
+                      name="phone"
+                      type="tel"
+                      className="contact--form-input"
+                      placeholder="Phone number"
+                    />
+                    <textarea
+                      onChange={handleChangeFormValues}
+                      value={inputs.message}
+                      name="message"
+                      className="contact--form-input"
+                      placeholder="Message"
+                    />
                     <button
-                      onClick={handleClickFormSend}
                       className="link-button dark wide"
-                    // type="submit"
+                      type="submit"
                     >
                       {isSending ? 'Sending...' : 'Send'}
                     </button>
