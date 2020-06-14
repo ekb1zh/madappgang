@@ -33,21 +33,6 @@ function App() {
     setIsPopupVisible(false);
   }
 
-  function renderPopupContent() {
-    return (
-      <>
-        <h3>Thanks for filling out our form!</h3>
-        <p>We will look over your message and Tatiana will get back to you in 24 hours. In the meantime, you can
-        check the <a href="#top">Foundation</a> section, look over our <a href="#top">projects
-          collection</a> or browse through our latest <a href="#top">blog posts</a>.</p>
-        <p>Your mate at MadAppGang, Jack Rudenko.</p>
-        <div onClick={handleClickPopupСonfirm} className="link-button dark wide popup-content--ok">
-          OK
-        </div>
-      </>
-    );
-  }
-
   console.log({ isLoading: isSending, isPopupVisible, inputs })
 
   return (
@@ -90,7 +75,7 @@ function App() {
                     <button
                       onClick={handleClickFormSend}
                       className="link-button dark wide"
-                      // type="submit"
+                    // type="submit"
                     >
                       {isSending ? 'Sending...' : 'Send'}
                     </button>
@@ -113,21 +98,26 @@ function App() {
                 className="contacts-page--visit-image" alt="macbook"
                 src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjY0cHgiIGhlaWdodD0iMTQycHgiIHZpZXdCb3g9IjAgMCAyNjQgMTQyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA1MCAoNTQ5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPk1hY2Jvb2sgaWxsdXN0cmF0aW9uPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IHgxPSI4Ny44OTY3NDA0JSIgeTE9IjQ1LjAzMTI4NTMlIiB4Mj0iLTEwMC41NjM3NzIlIiB5Mj0iNDUuMDMxMjg1MyUiIGlkPSJsaW5lYXJHcmFkaWVudC0xIj4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iI0ZGRkZGRiIgc3RvcC1vcGFjaXR5PSIwIiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgICAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNGRkZGRkYiIHN0b3Atb3BhY2l0eT0iMC4zNTk0MDg2MDIiIG9mZnNldD0iNTYuMTA3MDM4MSUiPjwvc3RvcD4KICAgICAgICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iI0ZGRkZGRiIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJXZWIiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJXZWJfR2V0X2luX3RvdWNoIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtODMzLjAwMDAwMCwgLTcxMi4wMDAwMDApIj4KICAgICAgICAgICAgPGcgaWQ9Ik1hY2Jvb2staWxsdXN0cmF0aW9uIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MzMuMDAwMDAwLCA3MDIuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUmVjdGFuZ2xlIiBmaWxsPSJ1cmwoI2xpbmVhckdyYWRpZW50LTEpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzkuOTc5NjcyLCAzMS4wMDAwMDApIHJvdGF0ZSgtOTAuMDAwMDAwKSB0cmFuc2xhdGUoLTE3OS45Nzk2NzIsIC0zMS4wMDAwMDApICIgcG9pbnRzPSIxNTEuOTc5NjcyIC01My45Nzk2NzIxIDIwNy45Nzk2NzIgLTQyLjkwNDMyMjcgMjA3Ljk3OTY3MiAxMTUuOTc5NjcyIDE1MS45Nzk2NzIgMTA0LjAzMDA0MSI+PC9wb2x5Z29uPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTU1LDE0NiBMMjMwLDE0NiBMMjMwLDE0NiBDMjMwLDE0OS4zMTM3MDggMjI3LjMxMzcwOCwxNTIgMjI0LDE1MiBMNTUsMTUyIEw1NSwxNDYgWiIgaWQ9IlJlY3RhbmdsZS0xNyIgZmlsbD0iI0I4QzBEMCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTAsMTQ2IEw3NywxNDYgQzc4LjY1Njg1NDIsMTQ2IDgwLDE0Ny4zNDMxNDYgODAsMTQ5IEw4MCwxNDkgQzgwLDE1MC42NTY4NTQgNzguNjU2ODU0MiwxNTIgNzcsMTUyIEw2LDE1MiBDMi42ODYyOTE1LDE1MiA0LjA1ODEyMjUxZS0xNiwxNDkuMzEzNzA4IDAsMTQ2IFoiIGlkPSJSZWN0YW5nbGUtMTctQ29weSIgZmlsbD0iI0Q1RDhERSI+PC9wYXRoPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTEwOC40MzQ5NTgsMzQgTDI0Ni44OTEyNDUsMzQgQzI1Mi40MTQwOTMsMzQgMjU2Ljg5MTI0NSwzOC40NzcxNTI1IDI1Ni44OTEyNDUsNDQgQzI1Ni44OTEyNDUsNDQuNjM0NDMzNiAyNTYuODMwODcsNDUuMjY3NDI3NSAyNTYuNzEwOTM1LDQ1Ljg5MDQyMTYgTDIzOS4zODQ3MzIsMTM1Ljg5MDQyMiBDMjM4LjQ3ODQ3NywxNDAuNTk3OTExIDIzNC4zNTg5NzEsMTQ0IDIyOS41NjUwNDIsMTQ0IEw5MS4xMDg3NTQ4LDE0NCBDODUuNTg1OTA3MywxNDQgODEuMTA4NzU0OCwxMzkuNTIyODQ3IDgxLjEwODc1NDgsMTM0IEM4MS4xMDg3NTQ4LDEzMy4zNjU1NjYgODEuMTY5MTMwNCwxMzIuNzMyNTczIDgxLjI4OTA2NTEsMTMyLjEwOTU3OCBMOTguNjE1MjY4Myw0Mi4xMDk1Nzg0IEM5OS41MjE1MjMsMzcuNDAyMDg5MSAxMDMuNjQxMDI5LDM0IDEwOC40MzQ5NTgsMzQgWiIgaWQ9IlJlY3RhbmdsZS0xNiIgZmlsbD0iI0UyRTVFQiI+PC9wYXRoPgogICAgICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbC04IiBmaWxsPSIjRkZGRkZGIiBjeD0iMTcyIiBjeT0iODkiIHI9IjEyIj48L2NpcmNsZT4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" />
             </div>
-            {isPopupVisible ? (
+            {isPopupVisible && (
               <div className="popup--wrapper">
                 <div className="popup--content popup--content-result" data-gtm-vis-recent-on-screen-6130796_6="3346304"
                   data-gtm-vis-first-on-screen-6130796_6="3346304" data-gtm-vis-total-visible-time-6130796_6="100"
-                  data-gtm-vis-has-fired-6130796_6="1">
-                  {renderPopupContent()}
-                </div>
-              </div>
-            ) : (
-                <div className="hidden">
-                  <div className="popup--content popup--content-result">
-                    {renderPopupContent()}
+                  data-gtm-vis-has-fired-6130796_6="1"
+                >
+                  <h3>Thanks for filling out our form!</h3>
+                  <p>We will look over your message and Tatiana will get back to you in 24 hours. In the meantime, you can
+                    check the <a href="#top">Foundation</a> section, look over our <a href="#top">projects
+                    collection</a> or browse through our latest <a href="#top">blog posts</a>.</p>
+                  <p>Your mate at MadAppGang, Jack Rudenko.</p>
+                  <div
+                    onClick={handleClickPopupСonfirm}
+                    className="link-button dark wide popup-content--ok"
+                  >
+                    OK
                   </div>
                 </div>
-              )}
+              </div>
+            )}
           </section>
         </div>
         <footer className="footer">
