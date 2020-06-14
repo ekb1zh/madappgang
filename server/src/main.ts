@@ -18,11 +18,11 @@ type GoogleAppsScriptEvent = {
 // Код сервера
 function doPost(event: GoogleAppsScriptEvent) {
   const data: T.Data = JSON.parse(event.postData.contents);
-  const prettyData = JSON.stringify(data, null, '  ');
+  const prettyData = JSON.stringify(data, null, '   ');
 
   MailApp.sendEmail({
     to: data.email,
-    subject: 'Email from copy site: www.madappgang.com/getintouch',
+    subject: 'Email from www.madappgang.com',
     body: prettyData,
   })
 
