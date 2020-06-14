@@ -6,10 +6,10 @@
 
 * Небольшое отличие копии от оригинала.
 На оригинальной версии сайта, при переходе с madappgang.com на madappgang.com/getintouch, появится 4 поля для заполнения:
-- name
-- email
-- phone number
-- message
+    * name
+    * email
+    * phone number
+    * message
 
 А если потом находясь на странице madappgang.com/getintouch обновить её, то поле phone number скроется.
 Предполагалось что это баг, поэтому при создании копии, это поведение не повторялось, в копии всегда 4 поля.
