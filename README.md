@@ -1,5 +1,5 @@
 # Задача:
-* Создать точную копию сайта [madappgang.com/getintouch](https://madappgang.com/getintouch).
+* Создать точную копию страницы [madappgang.com/getintouch](https://madappgang.com/getintouch).
 * Привязать возможность отправки эл. писем на произвольные адреса через форму.
 
 
