@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4295b75cdc23325c86a3c3ac7fab520e",
+    "revision": "836a144f7eb94e87f6fec61becd33543",
     "url": "/madappgang/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/madappgang/static/js/2.329da7f6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2a6164b3a81e66947581",
-    "url": "/madappgang/static/js/main.7ba6e262.chunk.js"
+    "revision": "6d5c71e27bf8cfa2788d",
+    "url": "/madappgang/static/js/main.7b5067c3.chunk.js"
   },
   {
     "revision": "7e30d4a3b35a53c5d9b2",

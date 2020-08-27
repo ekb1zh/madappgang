@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/madappgang/precache-manifest.f6c880b776dfdfb8ab7214e5fd3dff74.js"
+  "/madappgang/precache-manifest.9496076156a2fcc9fc7f472577cece01.js"
 );
 
 self.addEventListener('message', (event) => {
