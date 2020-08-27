@@ -14,7 +14,6 @@ function createDefaultInputs(): T.Data {
   return {
     name: '',
     email: '',
-    phone: '',
     message: '',
   }
 }
@@ -98,14 +97,6 @@ function App() {
                       className="contact--form-input"
                       placeholder="E-mail"
                       required />
-                    <input
-                      onChange={handleChangeFormValues}
-                      value={inputs.phone}
-                      name="phone"
-                      type="tel"
-                      className="contact--form-input"
-                      placeholder="Phone number"
-                    />
                     <textarea
                       onChange={handleChangeFormValues}
                       value={inputs.message}
